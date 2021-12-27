@@ -83,5 +83,8 @@ subplot(132);imhist(Verde);title('istogramma verde');
 subplot(133);imhist(Blu);title('istogramma blu');
    
 %% CCV
+
+c = Color_Coherence_Vector(image);
  
 %% LBP
+
