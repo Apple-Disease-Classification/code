@@ -16,11 +16,11 @@ Rosso = image(:,:,1);
 Verde = image(:,:,2);
 Blu = image(:,:,3);
 
-figure('name','Input Image result');
+figure('name','Risultato Input Image');
 subplot(221);imshow(Im,[]);title('Input Image');
-subplot(222);imshow(Rosso,[]);title('banda rossa');
-subplot(223);imshow(Verde,[]);title('banda verde');
-subplot(224);imshow(Blu,[]);title('banda blu');
+subplot(222);imshow(Rosso,[]);title('Canale rossa');
+subplot(223);imshow(Verde,[]);title('Canale verde');
+subplot(224);imshow(Blu,[]);title('Canale blu');
 
 [L, a, b] = RGBtoLab(Rosso, Verde, Blu);
 
