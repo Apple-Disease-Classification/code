@@ -44,29 +44,32 @@ bb = lab(:,:,3);
 
 %% K-Means segmentation
 
+
  cl = 5;
- [ABC,c] = KMeans_Clustering(ll,cl);
- [d,e]=size(c);
+ [ABC,co] = KMeans_Clustering(ll,cl);
+ [d,e]=size(co);
  for i=1:d
      for j=1:e
-         if c(i,j)==3
-             new(i,j)=0;
+         if co(i,j)==3
+             mat(i,j)=0;
          else
-             new(i,j)=c(i,j);
+             mat(i,j)=co(i,j);
          end
      end
  end
  
- [m1,s5] = size(new);
+ [m1,s5] = size(mat);
  for i = 1:m1
      for j = 1:s5
-         if new(i,j) == 0
-             new1(i,j,1:3) = Im(i,j,1:3);
+         if mat(i,j) == 0
+             new_mat(i,j,1:3) = Im(i,j,1:3);
          else
-             new1(i,j,1:3) = 0;
+             new_mat(i,j,1:3) = 0;
          end
      end
  end
 figure('name','Risultato K-Means'),
-subplot(121);imshow(new,[]);title('Risultato K-means');
-subplot(122);imshow(uint8(new1),[]);title('Risultato K-means on input image');
+subplot(121);imshow(mat,[]);title('Risultato K-means');
+subplot(122);imshow(uint8(new_mat),[]);title('Risultato K-means on input image');
+
+%% feature extraction
