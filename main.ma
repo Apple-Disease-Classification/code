@@ -10,6 +10,7 @@ Im = imread([p f]);
 Im = imresize(Im,[256 256]);
 
 %% rgb to lab color space conversion
+
 image = Im;
 Rosso = image(:,:,1);
 Verde = image(:,:,2);
@@ -27,6 +28,7 @@ figure('name','Risultato color space  da RGB a LAB');
 subplot(131);imshow(L,[]);title('Risultato L color space');
 subplot(132);imshow(a,[]);title('Risultato a color space');
 subplot(133);imshow(b,[]);title('Risultato b color space');
+
 labb = cat(3,L,a,b);
 cform = makecform('srgb2lab');
 lab = applycform(Im,cform); 
@@ -66,22 +68,20 @@ bb = lab(:,:,3);
          end
      end
  end
+ 
 figure('name','Risultato K-Means'),
 subplot(121);imshow(mat,[]);title('Risultato K-means');
 subplot(122);imshow(uint8(new_mat),[]);title('Risultato K-means on input image');
 
 %% feature extraction = global color histogram(GCH), Color Coherence Vector (CCV)and Local Binary Pattern(LBP).
 
- 
- %% GCH
+%% GCH
  
 figure('name','Risultato color histogram');
 subplot(131);imhist(Rosso);title('istogramma rosso');
- subplot(132);imhist(Verde);title('istogramma verde');
- subplot(133);imhist(Blu);title('istogramma blu');
-  
+subplot(132);imhist(Verde);title('istogramma verde');
+subplot(133);imhist(Blu);title('istogramma blu');
+   
+%% CCV
  
- %% CCV
- 
- 
- %% LBP
+%% LBP
