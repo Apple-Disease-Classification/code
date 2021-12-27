@@ -76,9 +76,10 @@ subplot(122);imshow(uint8(new_mat),[]);title('Risultato K-means on input image')
  %% GCH
  
 figure('name','Risultato color histogram');
- subplot(131);imhist(Rosso);title('Red band histogram');
- subplot(132);imhist(Verde);title('Green band histogram');
- subplot(133);imhist(Blu);title('Blue band histogram');
+subplot(131);imhist(Rosso);title('istogramma rosso');
+ subplot(132);imhist(Verde);title('istogramma verde');
+ subplot(133);imhist(Blu);title('istogramma blu');
+  
  
  %% CCV
  
