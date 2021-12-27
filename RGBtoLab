@@ -1,11 +1,8 @@
  
   function [L,a,b] = RGBtoLab(R,G,B)
 
-  %RGBTOLAB Convert an image from RGB to CIELAB
+%RGBTOLAB Convert an image from RGB to CIELAB
 %
-% function [L, a, b] = RGBTOLab(R, G, B)
-% function [L, a, b] = RGBTOLab(I)
-% function I = RGBTOLab(...)
 %
 % RGB2Lab takes red, green, and blue matrices, or a single M x N x 3 image, 
 % and returns an image in the CIELAB color space.  RGB values can be
