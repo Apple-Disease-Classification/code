@@ -75,16 +75,16 @@ subplot(122);imshow(uint8(new_mat),[]);title('Risultato K-means on input image')
 
 %% feature extraction = global color histogram(GCH), Color Coherence Vector (CCV)and Local Binary Pattern(LBP).
 
-%% GCH
+%% GCH :
  
-figure('name','Risultato color histogram');
-subplot(131);imhist(Rosso);title('istogramma rosso');
-subplot(132);imhist(Verde);title('istogramma verde');
-subplot(133);imhist(Blu);title('istogramma blu');
+ figure('name','Risultato color histogram');
+ subplot(131);imhist(Rosso);title('histogram rosso');
+ subplot(132);imhist(Verde);title('histogram verde');
+ subplot(133);imhist(Blu);title('histogram blu');
    
-%% CCV
+%% CCV :
 
 c = Color_Coherence_Vector(image);
  
-%% LBP
+%% LBP :
 
