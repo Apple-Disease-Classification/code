@@ -84,7 +84,11 @@ subplot(122);imshow(uint8(new_mat),[]);title('Risultato K-means on input image')
    
 %% CCV :
 
-c = Color_Coherence_Vector(image);
+ ccv = Color_Coherence_Vector(image);
+ c = mean(mean(ccv))
+ data = c;
+ ss1 = data;
+ save ss1 ss1
  
 %% LBP :
 
