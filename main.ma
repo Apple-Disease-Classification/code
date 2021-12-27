@@ -41,7 +41,7 @@ aa = lab(:,:,2);
 bb = lab(:,:,3);
 
 
-%% K-Means segmentation
+%% K-Means Clustering segmentation
 
  cl = 5;
  [ABC,co] = KMeans_Clustering(ll,cl);
