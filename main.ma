@@ -97,7 +97,7 @@ a = ll;
  for i = 2:m-1
      for j = 2:n-1
          b = a(i-1:i+1,j-1:j+1);
-         B(i-1:i+1,j-1:j+1) = Local_Binary_Pattern(b);
+         B(i-1:i+1,j-1:j+1) = Local_Binary_Pattern(b); %the function Restituisce un invariante di rotazione Local Binary Pattern (uniform patterns) per l'immagine X
      end
  end
  figure,imshow(B);
