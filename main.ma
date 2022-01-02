@@ -103,3 +103,7 @@ a = ll;
  figure,imshow(B);
  title('Local Binary Patterns');
 
+ localBP = mean(mean(B))
+ data = localBP;
+ s3 = data;
+ save s3 s3
