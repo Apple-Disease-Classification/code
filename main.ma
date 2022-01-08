@@ -30,7 +30,14 @@ subplot(132);imshow(a,[]);title('Risultato a color space');
 subplot(133);imshow(b,[]);title('Risultato b color space');
 
 labb = cat(3,L,a,b);
+
+% Create color transformation structure that defines an sRGB to L*a*b* conversion.
 cform = makecform('srgb2lab');
+
+% Perform the transformation by using the applycform function  
+% to converts the color values in  Image (Im) to the color space specified in the color 
+% transformation structure srgb2lab (cform) 
+
 lab = applycform(Im,cform); 
 
 
@@ -84,20 +91,27 @@ subplot(122);imshow(uint8(new_mat),[]);title('Risultato K-means on input image')
    
 %% CCV :
 
- ccv = Color_Coherence_Vector(image); %The Function Color_Coherence_Vector take an image and return the Vector that describe this Image.
- c = mean(mean(ccv))
- data = c;
- s1 = data;
- save s1 s1
- 
+%The Function Color_Coherence_Vector take an image and return the Vector that describe this Image.
+ ccv = Color_Coherence_Vector(image); 
+
+c = mean(ccv)
+% returns the mean of the number of coherent/incoherent pixels colored
+c = mean(ccv)
+data = c;
+s1 = data;
+save s1 s1
+
+
 %% LBP :
+
+%the LBP code is computed from  every pixel of the image to represent the texture of the image
 
 a = ll;
  [m,n] = size(a);
  for i = 2:m-1
      for j = 2:n-1
          b = a(i-1:i+1,j-1:j+1);
-         B(i-1:i+1,j-1:j+1) = Local_Binary_Pattern(b); %the function Restituisce un invariante di rotazione Local Binary Pattern (uniform patterns) per l'immagine X
+         B(i-1:i+1,j-1:j+1) = Local_Binary_Pattern(b); %the function Restituisce un invariante di rotazione Local Binary Pattern (uniform patterns) per ogni pixel
      end
  end
  figure,imshow(B);
