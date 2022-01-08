@@ -46,7 +46,7 @@ for p=1:m
         distanza_7 = norm(Bianco-Image_pq);
         distanza_8 = norm(Nero-Image_pq);
         Distanza = [distanza_1,distanza_2,distanza_3,distanza_4,distanza_5,distanza_6,distanza_7,distanza_8];
-        distanza = min(Distanza);  %the min is :(size(Color) is 8)
+        distanza = min(Distanza);  %the minimum is mean the size(Color) : 8
         [m1,n1] = find(Distanza == distanza);
         Imagec(p,q,:) = Colore(n1,:);
     end
