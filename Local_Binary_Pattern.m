@@ -41,13 +41,13 @@ p_7(1:siy,3:six+2) = Image;
 p_8(1:siy,2:six+1) = q2*double(Image);
 p_9(1:siy,1:six) = Image;
 
-Xi1_im = q1*p_1+ p_2+p_4 + p_5 + 0.000001;     %Xi1 is the right-down side from the pixel
-Xi2_im(3:siy+2,2:six+1) = Image;               %Xi2 is the center-down side from the pixel 
-Xi3_im = q1*p_3 + p_2 + p_6 + p_5 + 0.000001;  %Xi3 is the left-down side from the pixel 
-Xi4_im(2:siy+1,1:six) = Image;                 %Xi4 is the center-left side from the pixel  
-Xi5_im = q1*p_9 + p_8 + p_6 + p_5 + 0.000001;  %Xi5 is the right-up side from the pixel
-Xi6_im(1:siy,2:six+1) = Image;                 %Xi6 is the center-up side from the pixel
-Xi7_im = q1*p_7 + p_8 + p_4 + p_5 + 0.000001;  %Xi7 to the left-up side from the pixel
+Xi1_im = q1*p_1+ p_2+p_4 + p_5 + 0.000001;     %Xi1 is the right-down(3*3) side from the pixel 
+Xi2_im(3:siy+2,2:six+1) = Image;               %Xi2 is the center-down(3*3) side from the pixel
+Xi3_im = q1*p_3 + p_2 + p_6 + p_5 + 0.000001;  %Xi3 is the left-down(3*3) side from the pixel 
+Xi4_im(2:siy+1,1:six) = Image;                 %Xi4 is the center-left(3*3) side from the pixel 
+Xi5_im = q1*p_9 + p_8 + p_6 + p_5 + 0.000001;  %Xi5 is the right-up(3*3) side from the pixel
+Xi6_im(1:siy,2:six+1) = Image;                 %Xi6 is the center-up(3*3) side from the pixel 
+Xi7_im = q1*p_7 + p_8 + p_4 + p_5 + 0.000001;  %Xi7 to the left-up(3*3) side from the pixel 
 Xi8_im(2:siy+1,3:six+2) = Image;
 
 X_im = (Xi4_im>=X_im)+2*(Xi5_im>=X_im)+4*(Xi6_im>=X_im)+8*(Xi7_im>=X_im)+16*(Xi8_im>=X_im)+32*(Xi1_im>=X_im)+64*(Xi2_im>=X_im)+128*(Xi3_im>=X_im);
