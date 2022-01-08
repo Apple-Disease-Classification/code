@@ -1,22 +1,22 @@
-
-
 function f = Color_Coherence_Vector(image)
+
 Image_processing = image;
 [m,n,t] = size(Image_processing);
 
-Image_processing_1(:,1:n-1,:) = Image_processing(:,2:n,:);
+%%Image Based Rendering
 Image_processing_1(:,n,:) = Image_processing(:,1,:);
-Image_processing_2(:,1,:) = Image_processing(:,n,:);
 Image_processing_2(:,2:n,:) = Image_processing(:,1:n-1,:);
-Image_processing_3(1:m-1,:,:) = Image_processing(2:m,:,:);
 Image_processing_3(m,:,:) = Image_processing(1,:,:);
-Image_processing_4(1,:,:) = Image_processing(m,:,:);
 Image_processing_4(2:m,:,:) = Image_processing(1:m-1,:,:);
+
+%Convert from uint8 to double
 Image_processing = double(Image_processing);
 Image_processing_1 = double(Image_processing_1);
 Image_processing_2 = double(Image_processing_2);
 Image_processing_3 = double(Image_processing_3);
 Image_processing_4 = double(Image_processing_4);
+
+%Average correlation for each channels for image
 ImageBR = (Image_processing_1+Image_processing_2+Image_processing_3+Image_processing_4+Image_processing) / 5;
 
 Rosso = [255,0,0];
@@ -27,12 +27,17 @@ RossoBlu = Rosso + Blu;
 VerdeBlu = Verde + Blu;
 Bianco = Rosso + Verde +Blu;
 Nero = Bianco * 0;
+
+%% Matrix of combination RGB colors 
 Colore = [Rosso;Verde;Blu;RossoVerde;RossoBlu;VerdeBlu;Bianco;Nero];
+
+%In order to remove the minute variations between the neighboring pixels
+%% the image is operated by the blurring and discretization steps
 
 for p=1:m
     for q=1:n
         Image_pq = [ImageBR(p,q,1),ImageBR(p,q,2),ImageBR(p,q,3)];
-        distanza_1 = norm(Rosso-Image_pq);
+        distanza_1 = norm(Rosso-Image_pq);  %Euclidean norm for Compute the distance between pixels image
         distanza_2 = norm(Verde-Image_pq);
         distanza_3 = norm(Blu-Image_pq);
         distanza_4 = norm(RossoVerde-Image_pq);
@@ -41,7 +46,7 @@ for p=1:m
         distanza_7 = norm(Bianco-Image_pq);
         distanza_8 = norm(Nero-Image_pq);
         Distanza = [distanza_1,distanza_2,distanza_3,distanza_4,distanza_5,distanza_6,distanza_7,distanza_8];
-        distanza = min(Distanza);
+        distanza = min(Distanza);  %the min is :(size(Color) is 8)
         [m1,n1] = find(Distanza == distanza);
         Imagec(p,q,:) = Colore(n1,:);
     end
@@ -54,7 +59,6 @@ for p=1:m
     for q=1:n
         if MaskMat(p,q) == 0
             MaskMat(p,q) = k;
-            % CColor(k,:) = Imagec(p,q,:);
             k = k + 1;
         end
         % 1
@@ -140,6 +144,8 @@ for p=1:m
     end
 end
 
+%% The connected components are further classified as either coherent or incoherent regions.
+
 RossoV = [];
 VerdeV = [];
 BluV = [];
@@ -182,6 +188,10 @@ for kc=1:k
     end
 end
 
+%% For each color will get two values (C & I)(Coherent and Incoherent)
+%% C is the number of coherent pixels.
+%% I is the number of incoherent pixels.
+
 Kv = zeros(1,k-1);
 for p=1:m
     for q=1:n
@@ -191,6 +201,7 @@ end
 
 threshold = (m*n) / 15;
 
+%% for red color(c & i)
 RossoC = 0;
 RossoI = 0;
 [m1,n1] = size(RossoV);
@@ -202,6 +213,7 @@ for p=1:n1
     end
 end
 
+%% for green color(c & i)
 VerdeC = 0;
 VerdeI = 0;
 [m1,n1] = size(VerdeV);
@@ -213,6 +225,7 @@ for p=1:n1
     end
 end
 
+%% for blue color(c & i)    
 BluC = 0;
 BluI = 0;
 [m1,n1] = size(BluV);
@@ -224,6 +237,7 @@ for p=1:n1
     end
 end
 
+%% for red%green color(c & i)
 RossoVerdeC = 0;
 RossoVerdeI = 0;
 [m1,n1] = size(RossoVerdeV);
@@ -235,6 +249,7 @@ for p=1:n1
     end
 end
 
+%% for red&Blue color(c & i)
 RossoBluC = 0;
 RossoBluI = 0;
 [m1,n1] = size(RossoBluV);
@@ -246,6 +261,7 @@ for p=1:n1
     end
 end
 
+%% for Green&Blue color(c & i)
 VerdeBluC = 0;
 VerdeBluI = 0;
 [m1,n1] = size(VerdeBluV);
@@ -257,6 +273,7 @@ for p=1:n1
     end
 end
 
+%% for white color(c & i)
 BiancoC = 0;
 BiancoI = 0;
 [m1,n1] = size(BiancoV);
@@ -268,6 +285,7 @@ for p=1:n1
     end
 end
 
+%% for black color(c & i)
 NeroC = 0;
 NeroI = 0;
 [m1,n1] = size(NeroV);
