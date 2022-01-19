@@ -94,13 +94,6 @@ subplot(122);imshow(uint8(new_mat),[]);title('Risultato K-means on input image')
 %The Function Color_Coherence_Vector take an image and return the Vector that describe this Image.
  ccv = Color_Coherence_Vector(image); 
 
-c = mean(ccv)
-% returns the mean of the number of coherent/incoherent pixels colored
-c = mean(ccv)
-data = c;
-s1 = data;
-save s1 s1
-
 
 %% LBP :
 
