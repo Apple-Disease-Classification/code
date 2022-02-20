@@ -38,10 +38,6 @@ load r8
 load r9
 load r10
 
-%%load ru1
-%%load ru2
-%%load ru3
-%%load ru4
 
 load s1
 load s2
@@ -54,8 +50,7 @@ load s8
 load s9
 load s10
 
-% T = [n1,n2,n3,n4,n5,b1,b2,b3,b4,b5,r1,r2,r3,r4,r5,s1,s2,s3,s4,s5];
-% x = [0 0 0 0 0 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3];
+
 T = [n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,r1,r2,r3,r4,r5,r6,n7,n8,n9,n10,s1,s2,s3,s4,s5,s6,n7,n8,n9,n10];
 x = [0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3];
 %% create a feed forward neural network
