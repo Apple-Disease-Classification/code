@@ -54,7 +54,7 @@ T = [n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,r1,r2,r3,r4,r
 x = [0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3];
 %% create a feed forward neural network
 
-net3 = newff(minmax(T),[30 40 1],{'logsig','logsig','purelin'},'trainrp');
+net3 = newff(minmax(T),[30 20 1],{'logsig','logsig','purelin'},'trainrp');
 %minmax(T) : matrix of min and max values for T input vectors elements
 %[30 20 1] : Size of ith layer
 %{'logsig','logsig','purelin'} : Transfer function of ith layer
