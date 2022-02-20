@@ -50,7 +50,6 @@ load s8
 load s9
 load s10
 
-
 T = [n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,r1,r2,r3,r4,r5,r6,n7,n8,n9,n10,s1,s2,s3,s4,s5,s6,n7,n8,n9,n10];
 x = [0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3];
 %% create a feed forward neural network
@@ -67,8 +66,9 @@ net3.trainParam.show = 1000;  %Epochs between displays (NaN for no displays).The
 net3.trainParam.lr = 0.04;   %Learning rate. The default value is 0.01.
 net3.trainParam.epochs = 7000; %Maximum number of epochs to train.The default value is 1000.
 net3.trainParam.goal = 1e-5;  %Performance goal. The default value is 0.
-%net1.trainParam.deltamax=80.0;
-%net1.trainParam.delta0=1.00;
+
+%%%%%net1.trainParam.deltamax=80.0;
+%%%%%net1.trainParam.delta0=1.00;
 
 %% Train the neural network using the input,target and the created network
 [net3] = train(net3,T,x);
