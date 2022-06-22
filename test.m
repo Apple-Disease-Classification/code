@@ -99,7 +99,7 @@ subplot(122);imshow(uint8(new_mat),[]);title('Risultato K-means on input image')
  
 %the LBP code is computed from  every pixel of the image to represent the texture of the image
  
-a = ll;
+a=mat;
 [m,n] = size(a); 
  for i = 2:m-1
      for j = 2:n-1
