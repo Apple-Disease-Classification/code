@@ -5,76 +5,437 @@ warning off all
 
 %% load the data
 
-load n1
-load n2
-load n3
-load n4
-load n5
-load n6
-load n7
-load n8
-load n9
+load n1 
+load n2 
+load n3 
+load n4 
+load n5 
+load n6 
+load n7 
+load n8 
+load n9 
 load n10
+load n11
+load n12
+load n13
+load n14
+load n15
+load n16
+load n17
+load n18
+load n19
+load n20
+load n21
+load n22
+load n23
+load n24
+load n25
+load n26
+load n27
+load n28
+load n29
+load n30
+load n31
+load n32
+load n33
+load n34
+load n35
+load n36
+load n37
+load n38
+load n39
+load n40
+load n41
+load n42
+load n43
+load n44
+load n45
+load n46
+load n47
+load n48
+load n49
+load n50
+load n51
+load n52
+load n53
+load n54
+load n55
+load n56
+load n57
+load n58
+load n59
+load n60
+load n61
+load n62
+load n63
+load n64
+load n65
+load n66
+load n67
+load n68
+load n69
+load n70
+load n71
+load n72
+load n73
+load n74
+load n75
+load n76
+load n77
+load n78
+load n79
 
-load b1
-load b2
-load b3
-load b4
-load b5
-load b6
-load b7
-load b8
-load b9
-load b10
+load b1  
+load b2  
+load b3  
+load b4  
+load b5  
+load b6  
+load b7  
+load b8  
+load b9  
+load b10 
+load b11 
+load b12 
+load b13 
+load b14 
+load b15 
+load b16 
+load b17 
+load b18 
+load b19 
+load b20 
+load b21 
+load b22 
+load b23 
+load b24 
+load b25 
+load b26 
+load b27 
+load b28 
+load b29 
+load b30 
+load b31 
+load b32 
+load b33 
+load b34 
+load b35 
+load b36 
+load b37 
+load b38 
+load b39 
+load b40 
+load b41 
+load b42 
+load b43 
+load b44 
+load b45 
+load b46 
+load b47 
+load b48 
+load b49 
+load b50 
+load b51 
+load b52 
+load b53 
+load b54 
+load b55 
+load b56 
+load b57 
+load b58 
+load b59 
+load b60 
+load b61 
+load b62 
+load b63 
+load b64 
+load b65 
+load b66 
+load b67 
+load b68 
+load b69 
+load b70 
+load b71 
+load b72 
+load b73 
+load b74 
+load b75 
+load b76 
+load b77 
+load b78 
+load b79 
+load b80 
+load b81 
+load b82 
+load b83 
+load b84 
+load b85 
+load b86 
+load b87 
+load b88 
+load b89 
+load b90 
+load b91 
+load b92 
+load b93 
+load b94 
+load b95 
+load b96 
+load b97 
+load b98 
+load b99 
+load b100
+load b101
+load b102
+load b103
+load b104
+load b105
+load b106
+load b107
+load b108
+load b109
+load b110
+load b111
+load b112
+load b113
+load b114
+load b115
+load b116
+load b117
+load b118
+load b119
+load b120
+load b121
 
-load r1
-load r2
-load r3
-load r4
-load r5
-load r6
-load r7
-load r8
-load r9
-load r10
+load r1  
+load r2  
+load r3  
+load r4  
+load r5  
+load r6  
+load r7  
+load r8  
+load r9  
+load r10 
+load r11 
+load r12 
+load r13 
+load r14 
+load r15 
+load r16 
+load r17 
+load r18 
+load r19 
+load r20 
+load r21 
+load r22 
+load r23 
+load r24 
+load r25 
+load r26 
+load r27 
+load r28 
+load r29 
+load r30 
+load r31 
+load r32 
+load r33 
+load r34 
+load r35 
+load r36 
+load r37 
+load r38 
+load r39 
+load r40 
+load r41 
+load r42 
+load r43 
+load r44 
+load r45 
+load r46 
+load r47 
+load r48 
+load r49 
+load r50 
+load r51 
+load r52 
+load r53 
+load r54 
+load r55 
+load r56 
+load r57 
+load r58 
+load r59 
+load r60 
+load r61 
+load r62 
+load r63 
+load r64 
+load r65 
+load r66 
+load r67 
+load r68 
+load r69 
+load r70 
+load r71 
+load r72 
+load r73 
+load r74 
+load r75 
+load r76 
+load r77 
+load r78 
+load r79 
+load r80 
+load r81 
+load r82 
+load r83 
+load r84 
+load r85 
+load r86 
+load r87 
+load r88 
+load r89 
+load r90 
+load r91 
+load r92 
+load r93 
+load r94 
+load r95 
+load r96 
+load r97 
+load r98 
+load r99 
+load r100
+load r101
+load r102
+load r103
+load r104
+load r105
+load r106
+load r107
+load r108
+load r109
+load r110
+load r111
+load r112
+load r113
+load r114
 
 
-load s1
-load s2
-load s3
-load s4
-load s5
-load s6
-load s7
-load s8
-load s9
+
+load s1 
+load s2 
+load s3 
+load s4 
+load s5 
+load s6 
+load s7 
+load s8 
+load s9 
 load s10
+load s11
+load s12
+load s13
+load s14
+load s15
+load s16
+load s17
+load s18
+load s19
+load s20
+load s21
+load s22
+load s23
+load s24
+load s25
+load s26
+load s27
+load s28
+load s29
+load s30
+load s31
+load s32
+load s33
+load s34
+load s35
+load s36
+load s37
+load s38
+load s39
+load s40
+load s41
+load s42
+load s43
+load s44
+load s45
+load s46
+load s47
+load s48
+load s49
+load s50
+load s51
+load s52
+load s53
+load s54
+load s55
+load s56
+load s57
+load s58
+load s59
+load s60
+load s61
+load s62
+load s63
+load s64
+load s65
+load s66
+load s67
+load s68
+load s69
+load s70
+load s71
+load s72
+load s73
+load s74
+load s75
+load s76
+load s77
+load s78
+load s79
+load s80
+load s81
+load s82
 
-T = [n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,r1,r2,r3,r4,r5,r6,n7,n8,n9,n10,s1,s2,s3,s4,s5,s6,n7,n8,n9,n10];
-x = [0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3];
+%  T = [n1,n2,n3,n4,n5,b1,b2,b3,b4,b5,r1,r2,r3,r4,r5,s1,s2,s3,s4,s5];
+%  x = [0 0 0 0 0 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3];
+% T = [n1,n2,n3,n4,n5,n6,n7,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,r1,r2,r3,r4,r5,s1,s2,s3];
+% x = [0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 3 3 3];
+T = [n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,n11,n12,n13,n14,n15,n16,n17,n18,n19,n20,n21,n22,n23,n24,n25,n26,n27,n28,n29,n30,n31,n32,n33,n34,n35,n36,n37,n38,n39,n40,n41,n42,n43,n44,n45,n46,n47,n48,n49,n50,n51,n52,n53,n54,n55,n56,n57,n58,n59,n60,n61,n62,n63,n64,n65,n66,n67,n68,n69,n70,n71,n72,n73,n74,n75,n76,n77,n78,n79,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48,b49,b50,b51,b52,b53,b54,b55,b56,b57,b58,b59,b60,b61,b62,b63,b64,b65,b66,b67,b68,b69,b70,b71,b72,b73,b74,b75,b76,b77,b78,b79,b80,b81,b82,b83,b84,b85,b86,b87,b88,b89,b90,b91,b92,b93,b94,b95,b96,b97,b98,b99,b100,b101,b102,b103,b104,b105,b106,b107,b108,b109,b110,b111,b112,b113,b114,b115,b116,b117,b118,b119,b120,b121,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15,r16,r17,r18,r19,r20,r21,r22,r23,r24,r25,r26,r27,r28,r29,r30,r31,r32,r33,r34,r35,r36,r37,r38,r39,r40,r41,r42,r43,r44,r45,r46,r47,r48,r49,r50,r51,r52,r53,r54,r55,r56,r57,r58,r59,r60,r61,r62,r63,r64,r65,r66,r67,r68,r69,r70,r71,r72,r73,r74,r75,r76,r77,r78,r79,r80,r81,r82,r83,r84,r85,r86,r87,r88,r89,r90,r91,r92,r93,r94,r95,r96,r97,r98,r99,r100,r101,r102,r103,r104,r105,r106,r107,r108,r109,r110,r111,r112,r113,r114,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15,s16,s17,s18,s19,s20,s21,s22,s23,s24,s25,s26,s27,s28,s29,s30,s31,s32,s33,s34,s35,s36,s37,s38,s39,s40,s41,s42,s43,s44,s45,s46,s47,s48,s49,s50,s51,s52,s53,s54,s55,s56,s57,s58,s59,s60,s61,s62,s63,s64,s65,s66,s67,s68,s69,s70,s71,s72,s73,s74,s75,s76,s77,s78,s79,s80,s81,s82];
+x = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3];
 %% create a feed forward neural network
 
-net3 = newff(minmax(T),[30 20 1],{'logsig','logsig','purelin'},'trainrp');
+net1 = newff(minmax(T),[450 270 1],{'logsig','logsig','purelin'},'trainrp');
 %minmax(T) : matrix of min and max values for T input vectors elements
 %[30 20 1] : Size of ith layer
-%{'logsig','logsig','purelin'} : Transfer function of ith layer
+%{'logsig','logsig','purelin'} : Transfer funggction of ith layer
 %'trainrp'  :  trains the network with trainrp (Use TRAINRP which is slower but more memory efficient than TRAINBFG.)
 %The training function BTF can be any of the backprop training
  %    functions such as TRAINLM, TRAINBFG, TRAINRP, TRAINGD...
 
-net3.trainParam.show = 1000;  %Epochs between displays (NaN for no displays).The default value is 25.
-net3.trainParam.lr = 0.04;   %Learning rate. The default value is 0.01.
-net3.trainParam.epochs = 7000; %Maximum number of epochs to train.The default value is 1000.
-net3.trainParam.goal = 1e-5;  %Performance goal. The default value is 0.
-
-%%%%%net1.trainParam.deltamax=80.0;
-%%%%%net1.trainParam.delta0=1.00;
+net1.trainParam.show = 1000;  %Epochs between displays (NaN for no displays).The default value is 25.
+net1.trainParam.lr = 0.05;   %Learning rate. The default value is 0.01.
+net1.trainParam.epochs = 7000; %Maximum number of epochs to train.The default value is 1000.
+net1.trainParam.goal = 1e-7;  %Performance goal. The default value is 0.
+%net1.trainParam.deltamax=80.0;
+%net1.trainParam.delta0=1.00;
 
 %% Train the neural network using the input,target and the created network
-[net3] = train(net3,T,x);
+[net1] = train(net1,T,x);
 
 %% save the network
-save net3
+save net1
 
 %% simulate the network for a particular input
-y = round(sim(net3,T))
+y = round(sim(net1,T))
+
