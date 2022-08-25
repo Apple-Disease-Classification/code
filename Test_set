@@ -94,3 +94,9 @@ test_lab = imageDatastore("C:\Users\amesj\Desktop\Tesi\Mycode_test_update\DB_Tes
    label=test_lab.Labels;
    Cl = cellstr(label)
    
+
+
+
+grouphat = predict(Mdl,T);
+[CC,order] = confusionmat(C,grouphat,'Order',{'Blotch_Apple','Normal_Apple','Rot_Apple','Scab_Apple'})
+confusionchart(CC)
