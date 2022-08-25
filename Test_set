@@ -1,0 +1,96 @@
+
+%% load the data
+
+load ccv_test_n1 
+load ccv_test_n2 
+load ccv_test_n3 
+load ccv_test_n4 
+load ccv_test_n5 
+load ccv_test_n6 
+load ccv_test_n7 
+load ccv_test_n8 
+load ccv_test_n9 
+load ccv_test_n10
+load ccv_test_n11
+load ccv_test_n12
+load ccv_test_n13
+load ccv_test_n14
+load ccv_test_n15
+load ccv_test_n16
+load ccv_test_n17
+load ccv_test_n18
+load ccv_test_n19
+
+load ccv_test_b1  
+load ccv_test_b2  
+load ccv_test_b3  
+load ccv_test_b4  
+load ccv_test_b5  
+load ccv_test_b6  
+load ccv_test_b7  
+load ccv_test_b8  
+load ccv_test_b9  
+load ccv_test_b10 
+load ccv_test_b11 
+load ccv_test_b12 
+load ccv_test_b13 
+load ccv_test_b14 
+load ccv_test_b15 
+load ccv_test_b16 
+load ccv_test_b17 
+load ccv_test_b18 
+load ccv_test_b19 
+load ccv_test_b20 
+load ccv_test_b21 
+load ccv_test_b22 
+load ccv_test_b23 
+
+load ccv_test_r1  
+load ccv_test_r2  
+load ccv_test_r3  
+load ccv_test_r4  
+load ccv_test_r5  
+load ccv_test_r6  
+load ccv_test_r7  
+load ccv_test_r8  
+load ccv_test_r9  
+load ccv_test_r10 
+load ccv_test_r11 
+load ccv_test_r12 
+load ccv_test_r13 
+load ccv_test_r14 
+load ccv_test_r15 
+load ccv_test_r16 
+load ccv_test_r17 
+load ccv_test_r18 
+load ccv_test_r19 
+load ccv_test_r20 
+load ccv_test_r21 
+load ccv_test_r22 
+load ccv_test_r23 
+load ccv_test_r24 
+load ccv_test_r25 
+
+
+load ccv_test_s1 
+load ccv_test_s2 
+load ccv_test_s3 
+load ccv_test_s4 
+load ccv_test_s5 
+load ccv_test_s6 
+load ccv_test_s7 
+load ccv_test_s8 
+load ccv_test_s9 
+load ccv_test_s10
+load ccv_test_s11
+load ccv_test_s12
+load ccv_test_s13
+load ccv_test_s14
+load ccv_test_s15
+
+Tes=[ccv_test_n1;ccv_test_n2;ccv_test_n3;ccv_test_n4;ccv_test_n5;ccv_test_n6;ccv_test_n7;ccv_test_n8;ccv_test_n9;ccv_test_n10;ccv_test_n11;ccv_test_n12;ccv_test_n13;ccv_test_n14;ccv_test_n15;ccv_test_n16;ccv_test_n17;ccv_test_n18;ccv_test_n19;ccv_test_b1;ccv_test_b2;ccv_test_b3;ccv_test_b4;ccv_test_b5;ccv_test_b6;ccv_test_b7;ccv_test_b8;ccv_test_b9;ccv_test_b10;ccv_test_b11;ccv_test_b12;ccv_test_b13;ccv_test_b14;ccv_test_b15;ccv_test_b16;ccv_test_b17;ccv_test_b18;ccv_test_b19;ccv_test_b20;ccv_test_b21;ccv_test_b22;ccv_test_b23 ;ccv_test_r1;ccv_test_r2;ccv_test_r3;ccv_test_r4;ccv_test_r5;ccv_test_r6;ccv_test_r7;ccv_test_r8;ccv_test_r9;ccv_test_r10;ccv_test_r11;ccv_test_r12;ccv_test_r13;ccv_test_r14;ccv_test_r15;ccv_test_r16;ccv_test_r17;ccv_test_r18;ccv_test_r19;ccv_test_r20;ccv_test_r21;ccv_test_r22;ccv_test_r23;ccv_test_r24;ccv_test_r25 ;ccv_test_s1;ccv_test_s2;ccv_test_s3;ccv_test_s4;ccv_test_s5;ccv_test_s6;ccv_test_s7;ccv_test_s8;ccv_test_s9;ccv_test_s10;ccv_test_s11;ccv_test_s12;ccv_test_s13;ccv_test_s14;ccv_test_s15]
+
+test_lab = imageDatastore("C:\Users\amesj\Desktop\Tesi\Mycode_test_update\DB_Test\*","FileExtensions",[".jpg",".tif"],'LabelSource','foldernames');
+   label=test_lab.Labels;
+   Cl = cellstr(label)
+   
