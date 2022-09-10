@@ -1,8 +1,5 @@
 
-clc
-clear all
-close all
-warning off all
+
 % Esempio di calcolo delle feature per una singola immagine
 addpath(genpath('featuresComputation'));
 addpath(genpath('HAR'));
