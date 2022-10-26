@@ -1,4 +1,4 @@
-Risults of descriptor HM with classification Random Forest
+%%%%%%  Risults of descriptor HM with classification Random Forest  %%%%%%
 
 load features_HM_test.mat
 load Random_Forest_HM.mat  
