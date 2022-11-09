@@ -20,8 +20,11 @@ featuresAlexTest = squeeze(featuresAlexTest);
 featuresAlexTest = featuresAlexTest';
 
 %%
-classifier = fitcecoc(featuresAlexTV,YTrain)
-
+%classifier = fitcecoc(featuresAlexTV,YTrain)
+%classifier =fitcknn(featuresAlexTV,YTrain)
+%classifier = fitcensemble(featuresAlexTV,YTrain)
+%classifier = TreeBagger(60,featuresAlexTV,YTrain,'OOBPred','On','Method','classification')
+classifier = fitctree(featuresAlexTV,YTrain)
 %%
 YPred = predict(classifier,featuresAlexTest);
 
