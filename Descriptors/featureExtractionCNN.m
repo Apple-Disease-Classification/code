@@ -28,6 +28,16 @@ classifier = fitctree(featuresAlexTV,YTrain)
 %%
 YPred = predict(classifier,featuresAlexTest);
 
+[confusion,order] = confusionmat(YTest,YPred,'Order',{'Blotch_Apple','Normal_Apple','Rot_Apple','Scab_Apple'})
+
+[microAVG, macroAVG, wAVG, stats] = computeMetrics(confusion,1)
+%Accuracy = 1
+%Precision =2
+%Recall = 7
+%Specificity =11
+%F-score =16
+%MCC=18
+%Balanced Accuracy=19
 %%
 idx = [20 25 30 35];
 figure
