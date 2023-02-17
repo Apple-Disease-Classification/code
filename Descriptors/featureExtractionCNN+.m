@@ -53,14 +53,28 @@ featuresAlexTest = activations(net, audsTest, alexnet_fc, 'MiniBatchSize', 32);
 featuresAlexTest = squeeze(featuresAlexTest);
 featuresAlexTest = featuresAlexTest';
 
-%%
+%SVM
 classifier = fitcecoc(featuresAlexTV,YTrain)
+%KNN
 %classifier =fitcknn(featuresAlexTV,YTrain)
+%ENSEMBLE
 %classifier = fitcensemble(featuresAlexTV,YTrain)
+%TREE
 %classifier = fitctree(featuresAlexTV,YTrain)
+%Random Forest
+%classifier = TreeBagger(1,featuresAlexTV,YTrain)
+
 %%
 YPred = predict(classifier,featuresAlexTest);
 [confusion,order] = confusionmat(YTest,YPred,'Order',{'Blotch_Apple','Normal_Apple','Rot_Apple','Scab_Apple'})
+
+%Cl = cellstr(YTest) 
+%YPred = predict(classifier,featuresAlexTest);
+%[confusion,order] = confusionmat(Cl,YPred,'Order',{'Blotch_Apple','Normal_Apple','Rot_Apple','Scab_Apple'})
+
+%save classifier classifier featuresAlexTest YPred Cl
+
+
 
 [microAVG, macroAVG, wAVG, stats] = computeMetrics(confusion,1)
 %Accuracy = 1
