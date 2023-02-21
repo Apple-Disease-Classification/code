@@ -52,7 +52,27 @@ FeatureCombinTest = accumarray([i11(:),j11(:);i22(:),j22(:)],[T1(:);T2(:)]);
 %returns a vector of predicted class labels for the predictor data
 YPredSVM = predict(classifierSVM,FeatureCombinTest)
 YPredEnsemble = predict(classifierEnsemble,FeatureCombinTest)
+%interesse 
+%
+YPredSVMcell=cellstr(YPredSVM);
+YPredEnsemblecell=cellstr(YPredEnsemble);
+train_lab = imageDatastore("C:\Users\amesj\Desktop\Tesi\Mycode_test_update\DB_Test\*","FileExtensions",[".jpg",".tif"],'LabelSource','foldernames');
+   label=train_lab.Labels;
+   Cl = cellstr(label)
 
+[confusion,order] = confusionmat(Cl,YPredEnsemblecell,'Order',{'Blotch_Apple','Normal_Apple','Rot_Apple','Scab_Apple'})
+
+
+[microAVG, macroAVG, wAVG, stats] = computeMetrics(confusion,7)
+
+%Accuracy = 1
+%Precision =2
+%Recall = 7
+%Specificity =11
+%F-score =16
+%MCC=18
+%Balanced Accuracy=19
+%
 %Query point at which lime explains a prediction using the simple model (SimpleModel), specified as a row vector of numeric values 
  
 queryPoint = FeatureCombin(1,:)
