@@ -73,10 +73,64 @@ train_lab = imageDatastore("C:\Users\amesj\Desktop\Tesi\Mycode_test_update\DB_Te
 %MCC=18
 %Balanced Accuracy=19
 %
-%Query point at which lime explains a prediction using the simple model (SimpleModel), specified as a row vector of numeric values 
- 
-queryPoint = FeatureCombin(1,:)
+cvp = cvpartition(label,'holdout',80)
+
+	Xtrain = features_GLCM13(cvp.training,:);
+	ytrain = label(cvp.training,:);
+	Xtest  = features_GLCM13(cvp.test,:);
+	ytest  = label(cvp.test,:);
 
 
-results1 = lime(classifierSVM,'QueryPoint',queryPoint,'NumImportantPredictors',4)
-results2 = lime(classifierEnsemble,'QueryPoint',queryPoint,'NumImportantPredictors',4)
+nca = fscnca(Xtrain,ytrain,'FitMethod','none');
+
+L = loss(nca,Xtest,ytest)
+
+cvp = cvpartition(ytrain,'kfold',5);
+numvalidsets = cvp.NumTestSets;
+
+n = length(ytrain);
+lambdavals = linspace(0,20,20)/n;
+lossvals = zeros(length(lambdavals),numvalidsets);
+
+
+for i = 1:length(lambdavals)
+    for k = 1:numvalidsets
+        X = Xtrain(cvp.training(k),:);
+        y = ytrain(cvp.training(k),:);
+        Xvalid = Xtrain(cvp.test(k),:);
+        yvalid = ytrain(cvp.test(k),:);
+
+        nca = fscnca(X,y,'FitMethod','exact', ...
+             'Solver','sgd','Lambda',lambdavals(i), ...
+             'IterationLimit',30,'GradientTolerance',1e-4, ...
+             'Standardize',true);
+                  
+        lossvals(i,k) = loss(nca,Xvalid,yvalid,'LossFunction','classiferror');
+    end
+end
+
+
+meanloss = mean(lossvals,2)/10;
+
+
+figure()
+plot(lambdavals,meanloss,'ro-')
+xlabel('Lambda')
+ylabel('Loss (MSE)')
+grid on
+
+
+[~,idx] = min(meanloss) 
+
+bestlambda = lambdavals(idx)
+
+bestloss = meanloss(idx)
+
+nca = fscnca(Xtrain,ytrain,'FitMethod','exact','Solver','sgd','Lambda',bestlambda,'Standardize',true,'Verbose',1);
+
+
+figure()
+plot(nca.FeatureWeights,'ro')
+xlabel('Feature index')
+ylabel('Feature weight')
+grid on
